@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=chandu
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - "5432:5432"
+    container_name: postgres_db
+    networks:
+      - mynetwork
+
+  app:
+    build: .
+    volumes:
+      - .:/django
+    ports:
+      - "8000:8000"
+    container_name: django_app
+    command: bash -c "./wait-for-it.sh postgres:5432 -- python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    networks:
+      - mynetwork
+    depends_on:
+      - postgres
+
+networks:
+  mynetwork:

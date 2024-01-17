@@ -102,3 +102,73 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Database
+*.sqlite3
+db.sqlite3
+
+# Logs and exceptions
+*.log
+
+# Local development settings
+*.env
+
+# Media files
+/media
+
+# Static files
+/staticfiles
+
+# Virtual environment
+venv/
+.venv/
+env/
+.env/
+
+# IDE settings
+.vscode/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.bak
+*.swp
+*.swo
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+
+# Temporary files
+*.bak
+
+# Editor-specific files
+*~
+
+# macOS system files
+.DS_Store
+
+# Node.js files
+node_modules/
+
+# Compiled Python files
+*.pyc
+*.pyo
+
+# Compiled C extension files
+*.so
+*.pyd
+*.pyo
+
+# Docker
+docker-compose.yml
+docker-compose.override.yml
+*.dockerignore
