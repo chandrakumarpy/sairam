@@ -5,7 +5,7 @@ RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev mariadb-connector-c-dev
 
 WORKDIR /django
-COPY path/to/requirements.txt requirements.txt
+COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt -v
 COPY . .
 RUN python manage.py migrate
