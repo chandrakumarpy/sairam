@@ -6,7 +6,7 @@ RUN apk update \
 
 WORKDIR /demochandu
 COPY . /demochandu
-COPY requirements.txt .
+COPY demochandu/requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt -v
 RUN python manage.py migrate
 RUN echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin1', 'admin1@example.com', 'admin1')" | python manage.py shell
