@@ -4,7 +4,7 @@ ENV PYTHONUNBUFFERED=1
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev mariadb-connector-c-dev
 
-WORKDIR /django
+WORKDIR /demochandu
 COPY demochandu/requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt -v
 COPY . .
